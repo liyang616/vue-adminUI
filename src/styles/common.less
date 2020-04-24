@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "\5FAE\8F6F\96C5\9ED1", "\5B8B\4F53", Arial, sans-serif;
+}
+
+body {
+	background: #f2f6fc;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  border: none;
+}
+
+// 统一盒模型
+.border-box() {
+  *,
+  *:after,
+  *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+// 清除浮动
+.clearfix() {
+  &:after {
+    content: 'ly';
+    display: block;
+    clear: both;
+    visibility: hidden;
+    height: 0px;
+    overflow: hidden;
+  }
+}
+
+// 左侧菜单
+.navBar {
+	width: 220px;
+	background: #fff;
+	&.min {
+		width: 64px;
+		.systemTitle {
+			img{
+				position: inherit;
+				margin-top: 6px;
+			}
+		}
+		.elMenu{
+			width: 64px;
+		}
+		.el-menu-vertical-demo {
+			width: 64px;
+		}
+	}
+	.systemTitle{
+		line-height: 46px;
+		font-size: 24px;
+		color: #2196f3;
+		text-align: center;
+		span {
+			position: relative;
+			span {
+				padding-left: 38px;
+			}
+		}
+		img{
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 34px;
+		}
+	}
+	.elMenu{
+		position: fixed;
+		z-index: 1;
+		top: 46px;
+		bottom: 0;
+		width: 220px;
+		overflow-x: hidden;
+		background: rgb(17, 148, 246);
+		&::after {
+			content: "";
+			display: block;
+			width: inherit;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			background-color: inherit;
+			border-style: inherit;
+			border-color: inherit;
+			border-width: inherit;
+		}
+	}
+	.el-menu-vertical-demo {
+		width: 240px;
+		height: 100%;
+		overflow-x: hidden;
+		overflow-y: auto;
+	}
+	.el-menu {
+		border-right: none;
+		background: rgb(17, 148, 246);
+	}
+	.el-submenu__title,.el-submenu__title i{
+		color: #fff;
+	}
+	.el-submenu__title:hover {
+		background-color: #1089ec;
+	}
+	.el-menu-item:focus,.el-menu-item:hover {
+		outline: 0;
+		background-color: rgba(0, 0, 0, .1);
+	}
+	.el-menu--inline {
+		background-color: #1089ec;
+	}
+	.el-menu-item {
+		color: #fff;
+	}
+	.el-menu-item.is-active {
+		background-color: rgba(0, 0, 0, .1);
+	}
+	.el-submenu__icon-arrow {
+		right: initial;
+		left: 190px;
+	}
+}
+.el-menu--popup {
+	max-height: 100vh;
+	overflow-y: auto;
+}
