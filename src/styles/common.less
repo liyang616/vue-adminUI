@@ -25,8 +25,6 @@ img {
   *,
   *:after,
   *:before {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
 }
@@ -44,8 +42,9 @@ img {
 }
 
 // 左侧菜单
-.navBar {
-	width: 220px;
+.sideBar {
+	position: fixed;
+	width: 210px;
 	background: #fff;
 	&.min {
 		width: 64px;
@@ -85,7 +84,7 @@ img {
 		z-index: 1;
 		top: 46px;
 		bottom: 0;
-		width: 220px;
+		width: 210px;
 		overflow-x: hidden;
 		background: rgb(17, 148, 246);
 		&::after {
@@ -103,7 +102,7 @@ img {
 		}
 	}
 	.el-menu-vertical-demo {
-		width: 240px;
+		width: 230px;
 		height: 100%;
 		overflow-x: hidden;
 		overflow-y: auto;
@@ -139,4 +138,30 @@ img {
 .el-menu--popup {
 	max-height: 100vh;
 	overflow-y: auto;
+}
+
+.mainContainer {
+	&.min {
+		margin-left: 64px;
+	}
+	margin-left: 210px;
+	transition: margin-left .28s;
+}
+
+.navBar {
+	.clearfix();
+	height: 46px;
+	background: #fff;
+	.sideMin {
+		float: left;
+		margin: 10px 0 0 10px;
+		width: 22px;
+		height: 22px;
+		font-size: 16px;
+		text-align: center;
+		color: #1194f6;
+		border: 1px solid #1194f6;
+		border-radius: 50%;
+		cursor: pointer;
+	}
 }
