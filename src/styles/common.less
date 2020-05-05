@@ -163,5 +163,26 @@ img {
 		border: 1px solid #1194f6;
 		border-radius: 50%;
 		cursor: pointer;
+		transition: transform .3s;
+		&.out {
+			transform: rotateZ(180deg);
+		}
+	}
+	.el-dropdown {
+		float: right;
+	}
+	.userBox {
+		margin: 12px 0 0;
+		color: #5a5e66;
+		cursor: pointer;
+		.user {
+			font-size: 14px;
+			padding-right: 36px;
+		}
+		.el-icon-caret-bottom {
+			position: absolute;
+			top: 13px;
+			right: 13px;	
+		}
 	}
 }

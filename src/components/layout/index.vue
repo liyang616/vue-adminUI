@@ -1,8 +1,8 @@
 <template>
   <div class="app-wrapper">
-    <side-Bar></side-Bar>
-    <div class="mainContainer">
-      <nav-Bar></nav-Bar>
+    <side-Bar :isCollapse="isCollapse"></side-Bar>
+    <div class="mainContainer" :class="{'min' : isCollapse}">
+      <nav-Bar @collapseChange="collapseChange"></nav-Bar>
     </div>
   </div>
 </template>
@@ -17,9 +17,13 @@ export default {
   },
   data () {
     return {
+      isCollapse: false
     }
   },
   methods: {
+    collapseChange (isMin) {
+      this.isCollapse = isMin
+    }
   }
 }
 </script>
