@@ -8,7 +8,7 @@
     </div>
     <div class="elMenu">
       <el-menu
-        default-active="1-2"
+        default-active="/template/tableList"
         class="el-menu-vertical-demo"
         :router="true"
         @open="handleOpen"
@@ -24,8 +24,7 @@
             <i class="el-icon-s-promotion"></i>
             <span slot="title">常用模板</span>
           </template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
+          <el-menu-item index="/template/tableList">普通Table</el-menu-item>
         </el-submenu>
       </el-menu>
     </div>
@@ -34,6 +33,7 @@
 
 <script>
 export default {
+  name: 'sideBar',
   props: ['isCollapse'],
   data () {
     return {

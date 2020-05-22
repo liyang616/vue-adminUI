@@ -10,6 +10,24 @@ export default new Router({
       path: '/',
       name: 'layout',
       component: layout
+    },
+    {
+      path: '/template',
+      name: 'template',
+      component: layout,
+      meta: {
+        title: '常用模板'
+      },
+      children: [
+        {
+          name: 'tableList',
+          path: 'tableList',
+          component: () => import('@/views/table/tableList'),
+          meta: {
+            title: '常规表格'
+          }
+        }
+      ]
     }
   ]
 })

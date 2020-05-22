@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  name: 'navBar',
   data () {
     return {
       isMin: false
